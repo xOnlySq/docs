@@ -28,12 +28,22 @@ export default defineConfig({
     sidebar: [
       
       {
-        text: 'API2.0',
+        text: 'Startpoint',
         // collapsed: true,
         items: [
           { text: 'About', link: '/docs/api'},
           { text: 'Get started', link: '/getstarted' },
           { text: 'All models', link: '/docs/models' },
+          {
+            text: 'Tools',
+            collapsed: true,
+            items: [
+                { text: 'Tools overview', link: '/docs/tools' },
+                { text: 'Tool calling', link: '/docs/toolcall' },
+                { text: 'Tool building', link: '/docs/toolbuild' },
+            ]
+          },
+          { text: 'Image understanding', link: '/docs/imagesunderstand' },
         ]
       },
       {

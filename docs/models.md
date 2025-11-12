@@ -98,6 +98,6 @@ Command is a specialized AI model developed by Cohere, designed for understandin
 # Image models
 Image Models are AI models designed for tasks involving images, such as recognition, segmentation, generation, enhancement, and style transfer.
 
-| Model name  | Description                                                                                                                                   | Type | Modality | Endpoints                         |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------- | --------------------------------- |
-| `Kandinsky` | Kandinsky is a series of multimodal AI models developed by Sber, designed for generating and processing images based on textual descriptions. | Keys | Images   | <a href="/docs/imagen">ImaGen</a> |
+| Model name | Description                                                                                                    | Type | Modality | Endpoints                         |
+| ---------- | -------------------------------------------------------------------------------------------------------------- | ---- | -------- | --------------------------------- |
+| `flux`     | Flux is a 12 billion parameter rectified flow transformer capable of generating images from text descriptions. | Keys | Images   | <a href="/docs/imagen">ImaGen</a> |

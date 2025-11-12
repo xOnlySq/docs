@@ -1,4 +1,4 @@
-<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span> [https://api.onlysq.ru/ai/v2](https://api.onlysq.ru/ai/v2)
+<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span> [https://api.onlysq.ru/ai/imagen](https://api.onlysq.ru/ai/imagen)
 
 Generates an image based on the user's description.
 
@@ -16,25 +16,12 @@ The name of a [OnlySq AI model](/docs/models) which will process the request
 A request to the model describing items, landscapes, and other elements that the user wishes to see in the image.
 
 ---
-`width` int <span style="color: white; background-color: #607d8b; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Optional</span>
+`ratio` string <span style="color: white; background-color: #607d8b; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Optional</span>
 
-Width of the desired image, in pixels.
-- `max`: 2048
-- `default`: 1024
+Aspect ratio of the requested image.
+Must be one of: `1:1`, `16:9`, `21:9`, `3:2`, `2:3`, `4:5`, `5:4`, `3:4`, `4:3`, `9:16`, `9:21`.
 
----
-`height` int <span style="color: white; background-color: #607d8b; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Optional</span>
-
-Height of the desired image, in pixels.
-- `max`: 2048
-- `default`: 1024
-
----
-`count` int <span style="color: white; background-color: #607d8b; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Optional</span>
-
-The number of images corresponding to the requested description.
-- `max`: 4
-- `default`: 1
+Default: `1:1`
 
 ## Response
 
@@ -90,60 +77,34 @@ Unique of user by API key. Useful for submitting feedback.
 The simplest request example:
 ```python
 import requests, base64
-# Use only for images lower or eq 1024x1024
 j = {
-    "model": "kandinsky",
-    "prompt": "Cat"
+	"model": "flux",
+	"prompt": "cat on a blue water wave",
+	"ratio":"16:9"
 }
+
 r = requests.post("https://api.onlysq.ru/ai/imagen", json=j)
-c = r.json()
-with open('pic.png', 'wb') as f:
-    f.write(base64.b64decode(c.get("files")[0]))
-```
-
-Request example for high-resolution images (more than 1024x1024):
-```python
-import requests
-import base64
-
-j = {
-    "model": "kandinsky",
-    "prompt": "Cat",
-    "width": 1366,
-    "height": 768,
-    "count": 1
-}
-
-r = requests.post("https://api.onlysq.ru/ai/imagen", json=j, stream=True)
 r.raise_for_status()
 c = r.json()
 
 with open('pic.png', 'wb') as f:
-    f.write(base64.b64decode(c["files"][0]))
+	f.write(base64.b64decode(c["files"][0]))
 
 print("Image saved successfully")
-
 ```
 
 Executing one of the presented examples will save the image of the cat to the file pic.png.
 ### Response example
+![Output image](/images/cat.jpg)
 ```json
 {
-    "id": "imagen_xp0c8AQqE4o1Uu54blAn2hTGdLjpAXpdRplJQYORn9qCZywk",
-    "created": 1745854652,
-    "model": "kandinsky",
-    "count": 3,
-    "files": [
-        "base64",
-        "of",
-        "pictures"
-    ],
-    "size": {
-        "width": 1366,
-        "height": 768
-    },
-    "elapsed-time": 19.22223396191839,
-    "usage": 1311,
-    "user": 0
+    'id': 'imagen_u1nW43V9wAaWenrHifdqkzxSLNWIpXLVBMzJ4fnBsyNMx94w',
+    'created': 1753881206,
+    'model': 'flux',
+    'files': ['base64'],
+    'ratio': '16:9',
+    'elapsed-time': 3.20550274848938,
+    'usage': 1,
+    'user': 0
 }
 ```

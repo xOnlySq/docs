@@ -31,7 +31,7 @@ const membersOne = [
     name: 'Chepuxcat',
     title: 'Co-owner, Main Developer',
     links: [
-      { icon: 'github', link: 'https://github.com/chebupelka10' },
+      { icon: 'github', link: 'https://github.com/chepuxcat' },
       { icon: 'telegram', link: 'https://t.me/chepuxcat' },
       { icon: 'steam', link: 'https://steamcommunity.com/id/chepuxcat/' },
       { icon: 'vk', link: 'https://vk.com/chepuxcat' },
@@ -39,7 +39,9 @@ const membersOne = [
       // { icon: 'facebook', link: 'https://www.facebook.com/e.volkov20102018/' },
       // { icon: 'roblox', link: 'https://www.roblox.com/users/7349359959/profile' },
       { icon: 'readdotcv', link: 'https://chepuxcat.ru/' }
-    ]
+    ],
+    sponsor: "https://chepuxcat.ru/donate",
+    actionText: "Donate me",
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/93833106?v=4',

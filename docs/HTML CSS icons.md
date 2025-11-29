@@ -1,9 +1,0 @@
-<span style="color: white; background-color: #9e9e9e; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Disabled</span>
-<span style="color: white; background-color: #d32f2f; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Removed</span>
-<span style="color: white; background-color: #607d8b; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Optional</span>
-<span style="color: white; background-color: #cc1111; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">Required</span>
-<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">SDK</span>
-<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span>
-<span style="color: white; background-color: #2e7d32; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">GET</span>
-<span style="color: white; background-color: #cc1111; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">DELETE</span>
-<span style="color: white; background-color: #156759; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">BETA</span>

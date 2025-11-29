@@ -1,7 +1,11 @@
 <span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span> [https://api.onlysq.ru/ai/imagen](https://api.onlysq.ru/ai/imagen)
 
 Generates an image based on the user's description.
-
+> [!WARNING] Starting with patch 4.0.1 (November 29, 2025), every request to v2/imagen must have Authorization header
+> ```json
+> {"Authorization": "Bearer apikey"}
+> ```
+> Basic API key is `openai`
 ## Request
 This endpoint expects an object.
 

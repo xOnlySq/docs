@@ -2,6 +2,11 @@
 
 Generates a text response to a user message(s).
 
+> [!WARNING] Starting with patch 4.0.1 beta (November 29, 2025), every request to v2/imagen must have Authorization header
+> ```json
+> {"Authorization": "Bearer apikey"}
+> ```
+> Basic API key is `openai`
 ## Request
 This endpoint expects an object.
 
@@ -117,21 +122,25 @@ Unique of user by API key. Useful for submitting feedback.
 ```python
 import requests
 
-send = {
-    "model": "gpt-4o-mini",
-    "request": {
-        "messages": [
-            {
-                "role": "user",
-                "content": "Hi! Write a short one-line story"
-            }
-        ]
-    }
+headers = {
+    "Authorization":"Bearer openai"
 }
 
-request = requests.post('http://api.onlysq.ru/ai/v2', json=send)
+send = {
+    "model": "gemini-2.5-flash",
+    "request": {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hi! Write a short one-line story"
+            }
+        ]
+    }
+}
+
+request = requests.post('http://api.onlysq.ru/ai/v2', json=send, headers=headers)
 response = request.json()
-print(response["choices"][0]["message"]["content"])
+print(response)
 ```
 This returns the following response to the console:
 ```

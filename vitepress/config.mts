@@ -28,7 +28,7 @@ export default defineConfig({
     sidebar: [
       
       {
-        text: 'Startpoint',
+        text: 'OnlySq API',
         // collapsed: true,
         items: [
           { text: 'About', link: '/docs/api'},
@@ -44,16 +44,22 @@ export default defineConfig({
             ]
           },
           { text: 'Image understanding', link: '/docs/imagesunderstand' },
+          {
+            text: 'Endpoints',
+            // collapsed: true,
+            items: [
+              { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">SDK</span> OpenAI', link: '/docs/openaisdk'},
+              // { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">SDK</span> OnlySq', link: '/docs/onlysqsdk'},
+              { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span> API2.0', link: '/docs/endpoint2'},
+              { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span> ImaGen', link: '/docs/imagen'}
+            ]
+          }
         ]
       },
       {
-        text: 'Endpoints',
-        // collapsed: true,
+        text: '<span style="color: white; background-color: #156759; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">BETA</span> OnlySq Cloud',
         items: [
-          { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">SDK</span> OpenAI', link: '/docs/openaisdk'},
-          // { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">SDK</span> OnlySq', link: '/docs/onlysqsdk'},
-          { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span> API2.0', link: '/docs/endpoint2'},
-          { text: '<span style="color: white; background-color: #0d47a1; padding: 0.2em 0.5em; border-radius: 5px; font-size: 0.8em; font-weight: bold;">POST</span> ImaGen', link: '/docs/imagen'}
+          { text: 'How to work with Cloud?', link: '/docs/cloud'},
         ]
       }
     ],
